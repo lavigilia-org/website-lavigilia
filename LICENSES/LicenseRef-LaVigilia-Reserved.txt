@@ -1,0 +1,3 @@
+La Vigilia name and logo: all rights reserved.
+
+The name "La Vigilia" and the logos in the assets/ folder are covered neither by the MIT License nor by the CC BY 4.0 license of this repository. They may not be used in a way that suggests La Vigilia is the author, source or guarantor of content it did not publish. Mentioning them to refer to La Vigilia remains free.

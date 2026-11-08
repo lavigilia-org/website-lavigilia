@@ -1,0 +1,510 @@
+/* EB Garamond, SIL OFL 1.1: see fonts/OFL.txt */
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --nuit: #0F0A14;
+  --encre: #1A1A1A;
+  --terre: #A8917A;
+  --ambre: #C4956A;
+  --rouge: #8B0000;
+  --creme: #F7F5F0;
+  --os: #E8E4DD;
+  --cendre: #6B6560;
+  --papier: #E8E3DC;
+  --filet: #C8C4BC;
+  --braise: #1A1215;
+  --encre-adouci: #4A4540;
+
+  --max-width: 1000px;
+  --reading-width: 680px;
+  --section-padding-y: 80px;
+  --section-padding-x: 40px;
+
+  --font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+
+  --mode-transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease;
+}
+
+:root,
+[data-mode="light"] {
+  --bg: var(--creme);
+  --bg-alt: var(--papier);
+  --bg-block: var(--papier);
+  --text: var(--encre);
+  --text-body: var(--encre-adouci);
+  --text-meta: var(--cendre);
+  --accent: var(--rouge);
+  --structure: var(--terre);
+  --separator: var(--filet);
+  --gradient-bg: var(--creme);
+}
+
+[data-mode="dark"] {
+  --bg: var(--nuit);
+  --bg-alt: var(--braise);
+  --bg-block: var(--braise);
+  --text: var(--os);
+  --text-body: var(--os);
+  --text-meta: var(--cendre);
+  --accent: var(--ambre);
+  --structure: var(--ambre);
+  --separator: #2A2025;
+  --gradient-bg:
+    radial-gradient(ellipse at 50% 45%, rgba(139, 0, 0, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 20%, rgba(168, 145, 122, 0.09) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, rgba(60, 40, 80, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 90%, rgba(60, 40, 80, 0.10) 0%, transparent 45%),
+    var(--nuit);
+}
+
+/* Dark system setting, unless the visitor picked a mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode]) {
+    --bg: var(--nuit);
+    --bg-alt: var(--braise);
+    --bg-block: var(--braise);
+    --text: var(--os);
+    --text-body: var(--os);
+    --text-meta: var(--cendre);
+    --accent: var(--ambre);
+    --structure: var(--ambre);
+    --separator: #2A2025;
+    --gradient-bg:
+      radial-gradient(ellipse at 50% 45%, rgba(139, 0, 0, 0.16) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 20%, rgba(168, 145, 122, 0.09) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 90%, rgba(60, 40, 80, 0.12) 0%, transparent 45%),
+      radial-gradient(ellipse at 90% 90%, rgba(60, 40, 80, 0.10) 0%, transparent 45%),
+      var(--nuit);
+  }
+}
+
+/* Base */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+  background: var(--gradient-bg);
+  color: var(--text-body);
+  transition: var(--mode-transition);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 300ms ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* Layout */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.reading {
+  max-width: var(--reading-width);
+  margin: 0 auto;
+}
+
+/* Header */
+
+.site-header {
+  padding: 32px var(--section-padding-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.site-header .brand {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  font-weight: 400;
+}
+
+.header-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-meta);
+}
+
+.lang-switcher a,
+.lang-switcher span {
+  color: var(--text-meta);
+  padding: 4px 6px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 300ms ease, color 300ms ease;
+}
+
+.lang-switcher a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.lang-switcher .current {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.mode-toggle {
+  background: transparent;
+  border: 1px solid var(--separator);
+  color: var(--text-meta);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.mode-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.mode-toggle .icon {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Hero */
+
+.hero {
+  padding: 100px var(--section-padding-x) 80px;
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero .logo-wrapper {
+  max-width: 520px;
+  margin: 0 auto 60px;
+}
+
+.hero .logo-wrapper svg,
+.hero .logo-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.logo-dark { display: none; }
+.logo-light { display: block; }
+
+[data-mode="dark"] .logo-light { display: none; }
+[data-mode="dark"] .logo-dark { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode]) .logo-light { display: none; }
+  :root:not([data-mode]) .logo-dark { display: block; }
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text);
+  max-width: 720px;
+  margin: 0 auto 24px;
+}
+
+.hero .tagline {
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--text-meta);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Manifesto */
+
+.manifesto {
+  padding: 60px var(--section-padding-x) 100px;
+}
+
+.manifesto section {
+  margin-bottom: 80px;
+}
+
+.manifesto section:last-child {
+  margin-bottom: 0;
+}
+
+.manifesto .section-label {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.manifesto h2 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.manifesto p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin-bottom: 24px;
+}
+
+.manifesto p:last-child {
+  margin-bottom: 0;
+}
+
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--structure);
+  margin: 0 auto 60px;
+  opacity: 0.5;
+}
+
+.closing {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.closing p {
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 500px;
+  margin: 0 auto 16px;
+}
+
+.closing p.signature {
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 40px;
+}
+
+/* Contact */
+
+.contact {
+  padding: 100px var(--section-padding-x) 120px;
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-top: 1px solid var(--separator);
+}
+
+.contact h2 {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.contact p {
+  color: var(--text-body);
+  margin-bottom: 32px;
+  font-size: 17px;
+}
+
+.contact .email-link {
+  display: inline-block;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 14px 32px;
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  transition: all 300ms ease;
+}
+
+.contact .email-link:hover {
+  background: var(--accent);
+  color: var(--creme);
+  opacity: 1;
+}
+
+[data-mode="dark"] .contact .email-link:hover {
+  background: rgba(196, 149, 106, 0.2);
+  color: var(--os);
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 40px var(--section-padding-x) 60px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-meta);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.site-footer p {
+  margin-bottom: 4px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 900ms ease, transform 900ms ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  :root {
+    --section-padding-x: 24px;
+  }
+
+  body {
+    font-size: 17px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px var(--section-padding-x);
+  }
+
+  .hero {
+    padding: 60px var(--section-padding-x) 50px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero .tagline {
+    font-size: 18px;
+  }
+
+  .manifesto h2 {
+    font-size: 26px;
+    margin-bottom: 36px;
+  }
+
+  .manifesto p {
+    font-size: 17px;
+  }
+
+  .manifesto section {
+    margin-bottom: 60px;
+  }
+
+  .closing p {
+    font-size: 19px;
+  }
+
+  .contact {
+    padding: 70px var(--section-padding-x) 90px;
+  }
+
+  .contact h2 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
