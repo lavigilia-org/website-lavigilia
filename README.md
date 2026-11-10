@@ -1,6 +1,6 @@
 # lavigilia.org
 
-The public website of **La Vigilia**, a social promotion association (APS) being set up in Rome.
+The public website of **La Vigilia**, an association being set up in Rome.
 
 ## What this repository is
 
